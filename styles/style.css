@@ -1,0 +1,342 @@
+/*--------------GENERAL SELECTORS--------------*/
+
+body {
+  margin: 0px;
+	background-color: #ffffff;
+  color: #000000;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+/*--------------CSS GRID RESPONSIVE LAYOUT-------*/
+
+/* window width > 1200px */
+
+  /* container for CSS Grid */
+  .grid-container {
+    display: grid; /* initiate CSS Grid */
+    grid-template-columns: auto 300px 300px; /* create 3 columns and 4 vertical lines*/
+    /* first column reserved for map to fill in all available space */
+    /* the column with auto takes the remaining width (windowWidth - 300px - 300px) */
+    grid-template-rows: 100vh auto; /* create 2 rows and 3 horizontal lines*/
+    /* first row reserved for map to fill in all available space */
+    /*100 vh means the map will have a height always equal to 100% of window height*/
+  }
+
+  /* container for Leaflet map */
+  #map-container {
+    grid-area: 1/1/2/2;
+    border: 1px solid black;
+    margin: 10px; 
+  }
+
+  /* container for table */
+  #table-container {
+    grid-area: 1/2/3/3;
+    border: 1px solid black;
+    margin: 10px;
+  }
+
+  /* container for chart */
+  #chart-container {
+    grid-area: 1/3/3/4;
+    border: 1px solid black;  
+    margin: 10px;  
+  }
+
+
+/*window width < 1200px*/
+
+@media (max-width: 1200px) {
+
+  /* container for CSS Grid */
+  .grid-container {
+    display: grid; /* initiate CSS Grid */
+    grid-template-columns: 300px auto; /* create 2 columns and 3 vertical lines */
+    grid-template-rows: 600px auto; /* create 2 rows and 3 horizontal lines */
+  }
+
+  /* container for Leaflet map */
+  #map-container {
+    grid-area: 1/1/2/3;
+    border: 1px solid black;
+    margin: 10px; 
+  }
+
+  /* container for table */
+  #table-container {
+    grid-area: 2/1/3/2;
+    border: 1px solid black;
+    margin: 10px;
+  }
+
+  /* container for chart */
+  #chart-container {
+    grid-area: 2/2/3/3;
+    /*min-width: 300px;*/
+    border: 1px solid black;  
+    margin: 10px;  
+  }
+
+}
+
+
+/*---------------LEAFLET MAP ---------------*/
+
+.leaflet-container {
+  background: #ffffff;
+}
+
+#map {
+	width: 100%;
+  height: 100%; 
+}
+
+.popup-title, .percentage {
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.popup-text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 0.8;
+}
+
+.leaflet-popup-content {
+  width: 100px;
+}
+
+.leaflet-pseudo-fullscreen { 
+	position: fixed ; 
+	width: 100% ; 
+	height: 100% ; 
+	top: 0px ; 
+	left: 10px ; 
+	z-index: 99999; }
+
+.leaflet-control-zoom-fullscreen { 
+	background-image: url(../images/icon-fullscreen.png); 
+}
+
+.leaflet-retina.leaflet-control-zoom-fullscreen { 
+	background-image: url(../images/icon-fullscreen-2x.png); 
+	background-size: 26px 26px; 
+}
+
+.leaflet-control-zoom {
+  border-bottom: 1px solid #ccc;
+}
+
+.easy-button-container {
+  line-height: 30px !important;
+}
+
+/*center the icon on the button*/
+.easy-button-button {
+  padding-left: 2px;
+  padding-top: 2px;
+}
+
+.info {
+  padding: 6px 8px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 2px solid rgba(0,0,0,0.2);
+}
+
+.legend {
+  line-height: 24px;
+}
+
+.legend1 {
+  width: 110px;
+}
+
+.legend i {
+  float: left;
+  width: 30px;
+  height: 18px;
+  margin-right: 10px;
+  opacity: 1;
+  border: 1px solid black;
+}
+
+.circle-1 {
+  height: 30px;
+  width: 30px;
+  background-color: #000000;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid white;
+} 
+
+.circle-2 {
+  height: 24px;
+  width: 24px;
+  margin-left: 3px; /*to align circles centers*/
+  background-color: #000000;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid white;
+} 
+
+.circle-3 {
+  height: 18px;
+  width: 18px;
+  margin-left: 6px; /*to align circles centers*/
+  background-color: #000000;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid white;
+}
+
+.circle-4 {
+  height: 12px;
+  width: 12px;
+  margin-left: 9px; /*to align circles centers*/
+  background-color: #000000;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid white;
+}  
+
+.circle-5 {
+  height: 6px;
+  width: 6px;
+  margin-left: 12px; /*to align circles centers*/
+  background-color: #000000;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid white;
+} 
+
+.text-1 {
+  height: 30px;
+  width: 60px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+} 
+
+.text-2 {
+  height: 30px;
+  width: 60px;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+} 
+
+.text-3 {
+  height: 30px;
+  width: 60px;
+  position: absolute;
+  top: 82px;
+  right: 10px;
+} 
+
+.text-4 {
+  height: 30px;
+  width: 60px;
+  position: absolute;
+  top: 110px;
+  right: 10px;
+} 
+
+.text-5 {
+  height: 30px;
+  width: 60px;
+  position: absolute;
+  top: 137px;
+  right: 10px;
+} 
+
+.tooltip-text {
+  margin: 0px 0px 0px 0px;
+}
+
+#instructions {
+  /*width: auto;*/
+  max-width: 200px;
+  height: auto;
+  position: absolute;
+  top: 10px;
+  left: 60px;
+  z-index: 2000;
+  border: 2px solid rgba(0,0,0,0.2);
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.leaflet-control-layers-expanded {
+  color: #000000;
+}
+
+/*--------------TABLE FOR ZIPCODES--------------*/
+
+#table-data {
+  position: relative;
+  width: 100%;
+}
+
+#table-judete {
+  position: relative;
+  width: 100%;  
+}
+
+table, th, td{
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
+}
+
+th {
+  padding: 5px 5px 5px 5px;
+  font-weight: 600;
+  background-color: #D8D8D8;
+}
+
+tr:nth-child(odd) {
+  /*background-color: #FFFFFF;*/
+}
+
+tr {
+  padding: 10px;
+  background-color: #F3F3F3;
+}
+
+td {
+  padding: 5px 5px 5px 5px;
+  font-weight: 400;
+}
+
+
+/*---------------BAR CHART ---------------*/
+
+#chart-title {
+  padding: 5px 5px 5px 5px;
+  margin: 2px;
+  background-color: #D8D8D8;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
+  font-weight:600;
+}
+
+#value-chart-svg {
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 15px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.labels-value {
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
+  font-weight: 400;
+}
+
+
