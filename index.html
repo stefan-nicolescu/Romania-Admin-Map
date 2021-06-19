@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<title>Romania Admin Map</title> 
+
+    <!-- external libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="crossorigin=""></script>
+		<script src="https://unpkg.com/leaflet.fullscreen@1.5.0/Control.FullScreen.js"></script>
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+		<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+		
+		<!-- data -->
+		<script src="scripts/RO_NUTS_0.js"></script> <!-- poligon tara -->
+		<script src="scripts/RO_NUTS_1.js"></script> <!-- poligoane macro-regiuni -->
+		<script src="scripts/RO_NUTS_2.js"></script> <!-- poligoane regiuni -->
+		<script src="scripts/RO_NUTS_3.js"></script> <!-- poligoane judete -->
+		<script src="scripts/RO_NUTS_3_centroids.js"></script> <!-- puncte centre judete -->
+		
+		<!-- custom style -->
+		<link rel="stylesheet" href="styles/style.css" />
+	</head>
+
+<body>
+		<div class="grid-container"> 
+			<div id="map-container">
+				<div id="map">
+					<div id="instructions"></div>
+				</div>
+			</div>	
+			
+			<div id="table-container">
+				<div id="table-data"></div>	
+			</div>
+
+			<div id="chart-container">
+				<p id="chart-title">Value 2 - Bar Chart View </p>
+				<div id="value-chart"></div>
+			</div>
+		</div>
+
+		<!-- needs to come after map <div> because it invokes it -->
+		<script src="scripts/main.js"></script> 
+	</body>
+</html>
