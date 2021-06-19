@@ -10,7 +10,7 @@ let arrayValue2 = []; // array for counties value 2
 
 // get the CSV from Github and convert to JS array of objects
 function getCSV(callback) {
-	let csvLink = 'https://raw.githubusercontent.com/stefan-nicolescu/test/main/data_judete.csv';
+	let csvLink = 'https://raw.githubusercontent.com/stefan-nicolescu/Romania-Admin-Map/main/data/data_judete.csv';
   $.get(csvLink, function(csvString) {
     // use PapaParse to convert string to array of objects
     csvData = Papa.parse(csvString, {header: true, dynamicTyping: true, skipEmptyLines: true}).data;
