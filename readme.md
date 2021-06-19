@@ -16,12 +16,14 @@ The Leaflet JS library was used to display the map and make it interactive. D3.j
 + not the most intuitive drilldown;
 + table and chart only for Value 1;
 
-
 ### To Do
 + use real data and give it some form of utility;
 + add another level down (UAT - comune);
 + add search bar;
 + update table and chart when switching between Value 1 and Value 2;
+
+### Bugs
++ clicking on country when in Value 1 mode adds up Macro Regions;
 
 ### Libraries and Plugins
 Leaflet: https://leafletjs.com/
